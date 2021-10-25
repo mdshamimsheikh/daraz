@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document23</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+	<script>
+		let menuListJson = '[{"Title": "Electronic Devices","Sequence": 1,"URL": "#caboles"},{"Title": "Birthday gift","Sequence": 2,"URL": "#birthday_gift"} ,{"Title": "Classical shoes","Sequence": 3,"URL": "#shoes"},{"Title": "Amazing Phone","Sequence": 4,"URL": "#phones"},{"Title": "Collection","Sequence": 5,"URL": "#collection"},{"Title": "Writing pens","Sequence": 6,"URL": "#pens"},{"Title": "Cable collections","Sequence": 7,"URL": "#caboles"},{"Title": "Tumble Track","Sequence": 8,"URL": "#tarck"},{"Title": "Products","Sequence": 9,"URL": "#product"},{"Title": "Shop","Sequence": 10,"URL": "#shop"}   ]';
+		$(document).ready(function () {
+
+			let menuList = JSON.parse(menuListJson);
+			$.each(menuList, function (index, menu) {
+				$("#menuList").append('<a target="_blank"href="' + menu.URL + '" class="list-group-item small">' + menu.Sequence + '.' + menu.Title + '</a>');
+			});
+
+		});
+
+
+
+
+
+
+
+
+	</script>
+
+	<script>
+
+		$("#slideshow > div:gt(0)").hide();
+
+		setInterval(function () {
+			$('#slideshow > div:first')
+				.fadeOut(1000)
+				.next()
+				.fadeIn(1000)
+				.end()
+				.appendTo('#slideshow');
+		}, 3000);
+
+	</script>
+
+
+
+	<style>
+		.card:hover {
+			background-color: #be185d;
+			color: white;
+		}
+
+		#mony1 {
+			color: white;
+		}
+
+		.products .product-title a {
+			margin: 0 0 7px;
+			display: block;
+			color: var(--white-color);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			text-transform: uppercase;
+		}
+
+		.card {
+
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+		}
+
+		.img1 {
+			box-sizing: border-box;
+			align-items: center;
+		}
+
+		.card1 {
+
+			border: none;
+			box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+		}
+
+		.card1:hover {
+			background-color: white;
+			color: black;
+		}
+
+		/*slide share */
+		#slideshow {
+			margin: 50px auto;
+			position: relative;
+			width: 240px;
+			height: 240px;
+			padding: 10px;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+		}
+
+		#slideshow>div {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+		}
+
+		/* end slide */
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="javascript:void(0)"> <img
+					src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1HOIkg3ZC2uNjSZFnXXaxZpXa.png" height="30"
+					alt=""></a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mynavbar">
+
+				<div class="container-fluid d-flex">
+					<div class="flex-fill">
+
+						<form class="d-flex">
+							<input class="form-control me-2" type="text" placeholder="Search">
+							<button class="btn btn-primary" type="button">Search</button>
+						</form>
+					</div>
+				</div>
+
+
+
+
+				<i class="fab fa-opencart px-3"></i>
+				<div width="100" class="bg-warning px-2">
+					Advertisment
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="container-fluid px-5 text-white" style="background-color:#be185d;">
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 px-0 bg-white text-dark small">
+					<div id="menuList" class="list-group">
+
+					</div>
+				</div>
+				<div id="slideshow" class="col-md-10 px-0">
+					<h2>I am image 1</h2>
+					<img class="img-fluid w-100" src="https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg">
+				</div>
+				<div id="slideshow" class="col-md-10 px-0">
+					<h2>I am image 2</h2>
+					<img class="img-fluid w-100" src="https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg">
+				</div>
+				<div id="slideshow" class="col-md-10 px-0">
+					<h2>I am image 3</h2>
+					<img class="img-fluid w-100" src="https://m.media-amazon.com/images/I/61TD5JLGhIL._SX3000_.jpg">
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div id="shop" class="shop">
+			<h1>Shop</h1>
+			<div id="shop_id">
+				<div class="row my-4">
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/p/2fd04e524198e148dc09a3051993fa80.jpg" alt="">
+								<h5 class="card-title">Special title</h5>
+								<p class="card-text">With supporting text b.</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00
+									</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/p/8559e4a0651e3957f6d32c4ebd293e87.jpg_200x200q80-product.jpg_.webp"
+									alt="">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With supporta .</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div><a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/p/6cc80a4cf2d686f150164ae15e205f4c.jpg" alt="">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With suppo.</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div> <a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/b80aadadbaadbc1db27e692a5e6db52d.jpg"
+									alt="">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With supporting.</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/p/mdc/c3a8cfff67db93b12e719af1fffba6e6.jpg"
+									alt="">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With supporting.</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With suppo.</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div>
+			<h1>Products</h1>
+			<div id="product">
+				<div class="row my-4">
+					<div class="col-sm-2">
+
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title </h5>
+								<p class="card-text">With support.</p>
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title </h5>
+								<p class="card-text">With supporntent.</p>
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title</h5>
+								<p class="card-text">With supporting.</p>
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title </h5>
+								<p class="card-text">With support.</p>
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title</h5>
+								<p class="card-text">With s.</p>
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buyhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="card">
+							<div class="card-body">
+								<img class="img-fluid " style=""
+									src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+									alt="">
+								<h5 class="card-title">Special title</h5>
+								<p class="card-text">With supporti.</p>
+
+								<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Buy here</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="category" style="hover:green">
+			<h1>Category</h1>
+			<div id="category_id"></div>
+			<div class="row my-4">
+				<div class="col-sm-2">
+					<div class="card">
+						<div class="card-body">
+							<img class="img-fluid " style=""
+								src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+								alt="">
+							<h5 class="card-title">Special</h5>
+
+							<p class="card-text">With support inontent.</p>
+							<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+							<span style="color:red"> of 55%</span><span
+								class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+								style="text-decoration: line-through!important;">
+								$149.99
+							</span>
+
+
+							<div class="rating">
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+							</div>
+							<a href="#" class="btn btn-primary">Buy here</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="card">
+						<div class="card-body">
+							<img class="img-fluid " style=""
+								src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+								alt="">
+							<h5 class="card-title">Special</h5>
+							<p class="card-text">With supnal content.</p>
+							<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;<
+								<span style="color:red"> of 55%</span><span
+									class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+									style="text-decoration: line-through!important;">
+									$149.99
+								</span>
+
+
+								<div class="rating">
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+									<i class="rating__star far fa-star"></i>
+								</div>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="card">
+						<div class="card-body">
+							<img class="img-fluid " style=""
+								src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+								alt="">
+							<h5 class="card-title">Specil</h5>
+							<p class="card-text">With support inontent.</p>
+							<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+							<span style="color:red"> of 55%</span><span
+								class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+								style="text-decoration: line-through!important;">
+								$149.99
+							</span>
+
+							<div class="rating">
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+							</div>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="card">
+						<div class="card-body">
+							<img class="img-fluid " style=""
+								src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+								alt="">
+							<h5 class="card-title">Special</h5>
+							<p class="card-text">With support inontent.</p>
+							<ins><span class="money text-white  bg-warning">$300.00</span></ins> &nbsp;&nbsp;&nbsp;
+
+
+							<span style="color:red"> of 55%</span><span
+								class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+								style="text-decoration: line-through!important;">
+								$149.99
+							</span>
+
+
+							<div class="rating">
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+							</div>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="card">
+						<div class="card-body">
+							<img class="img-fluid " style=""
+								src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+								alt="">
+							<h5 class="card-title">Special</h5>
+							<p class="card-text">With support inontent..</p>
+							<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+							<span style="color:red"> of 55%</span><span
+								class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+								style="text-decoration: line-through!important;">
+								$149.99
+							</span>
+
+							<div class="rating">
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+							</div>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class="card">
+						<div class="card-body">
+							<img class="img-fluid " style=""
+								src="https://static-01.daraz.com.bd/original/92bfd1b3578a9afb9135420f54f51b85.jpg"
+								alt="">
+							<h5 class="card-title">Special</h5>
+							<p class="card-text">With support inontent.</p>
+							<ins><span class="money text-white  bg-warning">$300.00</span></ins>&nbsp;&nbsp;&nbsp;
+
+							<span style="color:red"> of 55%</span><span
+								class="a-size-mini a-color-tertiary octopus-widget-strike-through-price a-text-strike"
+								style="text-decoration: line-through!important;">
+								$149.99
+							</span>
+
+							<div class="rating">
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+								<i class="rating__star far fa-star"></i>
+							</div>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="container" id="collection">
+		<h2>Collections</h2>
+		<div class="row  my-4">
+
+
+
+			<div class="col-3">
+				<div class="card1" style="width: 18rem;"><a href="#">
+						<div class="px-5 "><img style="width: 80px;height: 102px;"
+								src="https://static-01.daraz.com.bd/p/aa0bb9b550eda491139ee59b885c260a.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 80px;height: 102px;"
+								src="https://static-01.daraz.com.bd/p/8bbf9b130de986da536d8954e6c129ef.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 80px;height: 102px;"
+								src="https://static-01.daraz.com.bd/original/bcd327c10cf50047aa316c841c8b2acb.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 80px;height: 102px;"
+								src="https://static-01.daraz.com.bd/original/47c7bb019259a77e6f1156c35732f419.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text-auto">Choice your watch.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div id="caboles" class="card1" style="width:18rem;"><a href="#">
+						<div class="px-5"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/b3345b8ffd647f56a24858b4c48111b2.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/6649e06a11b7e68c259d0562db1523cf.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/1ce397cdac40aa94f315c57aa1131305.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/e1f31cbbeac251e4a9ee8e945161bf83.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text">Some quick Cables.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div id="track" class="card1" style="width: 18rem;">
+					<a href="#">
+						<div class="px-5"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/f13b8aae73d15abcaeb029a99f465952.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/9555508f651b30d657b02b418c5404d1.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/475075046408d6549e444b1b648de7c9.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/ad3423e24004cc1f9d608fb359d4f52c.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text">Some Tumble Track.</p>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="col-3">
+				<div id="phones" class="card1" style="width: 18rem;">
+					<a href="#">
+						<div class="px-5"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/5269284f3a4b031ae04e16bc82701693.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/9f0ea677d5af8de344a6befcd8e5af5c.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/d03f39d6009c19083a9d958be0e204bf.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/728542d1da020f3c2ba5bcd20fc5e1d0.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text">Some Phones Example.</p>
+					</div>
+				</div>
+
+
+
+			</div>
+			<div class="col-3">
+				<div class="card1" style="width: 18rem;">
+					<a href="#">
+						<div class="px-5 my-2"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/03f37b5eead904c66ca760dd8cf8a871.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/9b0c8b701944ff7c33e0dceab2b01e67.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/9ef26a40166666729113aada1075ba5d.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/79a98dacba0982e90e5b5ea01a17a713.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text">Some quick example.</p>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="col-3">
+				<div id="birthday_gift class="card1" style="width: 18rem;">
+					<a href="#">
+						<div class="px-5 my-2"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/aa0bb9b550eda491139ee59b885c260a.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/aa0bb9b550eda491139ee59b885c260a.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/aa0bb9b550eda491139ee59b885c260a.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/aa0bb9b550eda491139ee59b885c260a.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text">Birthday Gift boy.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-3">
+				<div id="shoes" class="card1" style="width: 18rem;">
+					<a href="#">
+						<div class="px-5 my-2"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/3eaf4e0400d9795fc7ad5a5053f68793.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/a790b63ac1425dd8854c11b6e0c706f5.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/1ce397cdac40aa94f315c57aa1131305.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/194c6196068e0809a1ec5314e45fbccf.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body ">
+						<p class="card-text">Some Classy shoes.</p>
+					</div>
+				</div>
+			</div>
+			<div id="pens" class="col-3">
+				<div class="card1" style="width: 18rem;">
+					<a href="#">
+						<div class="px-5 my-2"><img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/d257f5bc7f42ccfd4ed59140d7d93f97.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/838832da6363452d9a3ddfdf5861260b.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/p/18ce177f202e7e61144d3d83865406bd.jpg"
+								class="card-img-top " alt="...">
+							<img style="width: 90px;height: 110px;"
+								src="https://static-01.daraz.com.bd/original/9d5101c7cee2d821c5ae651d97a72acb.jpg"
+								class="card-img-top " alt="...">
+						</div>
+					</a>
+					<div class="card-body">
+						<p class="card-text">Nice pen.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+</body>
+
+</html>
